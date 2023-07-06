@@ -1,0 +1,105 @@
+.mobile{
+    display: none;
+}
+.responsive{
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    align-items: center;
+    top: 5%;
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1000;
+}
+.responsive .mobile_icon{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 40px;
+}
+.responsive .mobile_icon div{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 50%;
+}
+.responsive .mobile_icon div svg{
+    font-size: 25px;
+    color: #0D4C93;
+}
+.responsive .mobile_icon div img{
+    width: 20px;
+   
+}
+.responsive .resImg img{
+    width: 120px;
+}
+.mobilebar{
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: #F3F3F3;
+top: 10%;
+z-index: 11000;
+text-align: center;
+}
+.mobilebar .item{
+    position: relative;
+    background-color:white;
+    margin: 2px 0px;
+    border-radius: 30px;
+    padding: 20px;
+    font-size: 20px;
+}
+.mobilebar .item a{
+    text-decoration: none;
+    color: #0D4C93;
+}
+.mobilebar .item:hover a{
+    color: #00C9C9;
+    transition: .1s;
+}
+.mobilebar .item span{
+position: absolute;
+top: -7px;
+right: 4px;
+color: black;
+}
+.mobilebar .item:hover  span{
+    color: #00C9C9;
+}
+.mobilebar .top_facebook{
+    background-color: #F3F3F3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:2px 7px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    color: #0D4C93;
+    height: 30px;
+}
+.mobilebar .top_facebook img{
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+.mobilebar .mobilelang{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    padding:5px 7px;
+    border-radius: 20px;
+    align-items: center;
+}
+@media screen and (max-width:1248px) {
+    .mobile{
+        display: block;
+    }
+}

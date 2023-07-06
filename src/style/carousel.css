@@ -1,0 +1,118 @@
+#app { height: 100% }
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@900&family=Poppins:wght@400;600;800&family=Roboto:wght@100&display=swap');
+.body {
+  position: relative;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+.body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  z-index: -1;
+}
+.header{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    width: 85%;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.header .header_text,
+.header .header_text_mobile{
+    width: 40%;
+}
+.header .header_img{
+    width: 40%;
+}
+.header_text h1{
+  color: #0D4C93;
+  width: 60%;
+}
+.header_text_mobile h1{
+    color: #0D4C93;
+    width: 60%;
+}
+.header_text_mobile p{
+    margin:25px 0px 25px 0px ;
+    line-height: 27px;
+}
+.header .btn{
+    background: rgba(0, 201, 201, 1);
+    border-radius: 35px;
+    padding: 5px 25px;
+    color: white;
+    text-align: center;
+    
+}
+.swiper-pagination-bullets.swiper-pagination-horizontal{
+    bottom: 50px;
+}
+.swiper-pagination-clickable .swiper-pagination-bullet{
+    width: 15px;
+    height: 15px;
+    border: 2px solid #00C9C9;
+    background-color: white;
+}
+
+.swiper-pagination-clickable .swiper-pagination-bullet-active{
+background-color: #00C9C9;
+}
+.header_text_mobile{
+  display: none;
+}
+@media screen and (max-width:912px) {
+  .header{
+    display: block;
+    margin: auto;
+    width: 85%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .header_text_mobile{
+    display: block;
+  }
+  .header .header_img{
+    width: 85%;
+}
+  .header_text{
+    display: none;
+  }
+  .header .header_text_mobile{
+    width: 90%;
+}
+  .header_text_mobile h1{
+    color: #0D4C93;
+    width: 90%;
+}
+.header_text_mobile p{
+  margin:25px 0px 25px 0px ;
+  line-height: 27px;
+  width: 100%;
+}
+
+  
+}

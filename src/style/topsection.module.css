@@ -1,0 +1,74 @@
+.topsection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+    gap: 50px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 11;
+}
+.topsection a{
+    text-decoration: none;
+}
+.topsection .circle{
+    background-color: white;
+   width: 30px;
+   cursor: pointer;
+   height: 30px;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.topsection .circle img{
+    width: 15px;
+    height: 15px;
+    /* padding: 10px; */
+}
+.topsection .contact{
+    display: flex;
+    gap: 10px;
+}
+.topsection .contactup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    line-height: 1.1;
+}
+.topsection .top_text a{
+    color: #5A5A5A;
+    font-size: 12px;
+}
+.topsection .centerImg img{
+    width: 120px;
+    cursor: pointer;
+    /* height: 40px; */
+}
+.topsection .top_facebook{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:2px 7px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    color: #0D4C93;
+    height: 30px;
+}
+.topsection .top_facebook img{
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+@media screen and (max-width:1248px) {
+    .topsection{
+       display: none;
+        
+    }
+}

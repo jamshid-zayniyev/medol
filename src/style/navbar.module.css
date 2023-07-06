@@ -1,0 +1,64 @@
+.magazin{
+    /* display: flex; */
+    width: 70%;
+    
+}
+.navbar{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    background-color: black;
+    border: 1px solid white;
+    background-color: #FFFFFF;
+    border-radius: 35px;
+    height: 40px;
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 10;
+    
+}
+.navbar .item {
+    line-height: 40px;
+    color: #0D4C93;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border: 1px solid #F2F2F2;
+    padding: 0 25px;
+    position: relative;
+    cursor: pointer;
+}
+.navbar .item:nth-child(1){
+    border-left: none;
+}
+.navbar .item:nth-child(6){
+    border-right: none;
+}
+.navbar .item a{
+    text-decoration: none;
+    color: #0D4C93;
+}
+.navbar .item:hover a{
+    color: #00C9C9;
+    transition: .1s;
+}
+.navbar .item span{
+position: absolute;
+top: -7px;
+right: 4px;
+color: white;
+}
+.navbar .item:hover  span{
+    color: #00C9C9;
+}
+@media screen and (max-width:1248px) {
+    .navbar{
+       display: none;
+        
+    }
+}

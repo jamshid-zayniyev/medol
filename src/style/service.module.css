@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@900&family=Poppins:wght@400;600;800&family=Roboto:wght@100;300;400;500&display=swap');
+.service{
+    margin-top: 40px;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+
+}
+.servicetitle{
+    color: #0D4C93;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 500;
+    margin: 30px 0;
+}
+.service .servicelayout{
+    background-image: url(../assets/Image/hospital.png);
+    width: 100%;
+}
+.service .servicecards{
+    padding: 50px 0 ;
+    display: grid;
+    grid-template-columns: repeat(3,23%);
+    justify-content: center;
+    gap: 20px;
+}
+.service .servicecard{
+    background-color: white;
+    position: relative;
+    border-radius: 50px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 350px;
+}
+.service .servicecard img{
+    width: 100%;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+}
+.service .servicecardbody{
+    text-align: center;
+    font-size: 12px;
+    margin-top: 20px;
+    padding: 0 10px;
+}
+.service .servicecardbody span{
+    color: rgba(13, 76, 147, 1);
+    font-size: 16px;
+    font-weight: 500;
+}
+.service  .btn{
+position: absolute;
+top: 100%;
+left: 50%;
+transform: translate(-50%,-50%);
+background: linear-gradient(90deg, #0D4C93 0%, #00C9C9 100%);
+border-radius: 35px;
+padding: 7px 45px;
+color: white;
+text-align: center;
+border: none;
+transition: 0.5s;
+}
+.service .btn:hover{
+    background: rgba(0, 201, 201, 1);
+    transition: 0.5s;
+}
+
+@media screen and (max-width:912px) {
+    .service .servicecards{
+        padding: 50px 0 ;
+        display: grid;
+        grid-template-columns: repeat(2,300px);
+        justify-content: center;
+        gap: 40px;
+    }
+    .servicetitle{
+        color: #0D4C93;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 500;
+        margin: 30px 0;
+    }
+}
+@media screen and (max-width:768px) {
+    .service .servicecards{
+        padding: 50px 0 ;
+        display: grid;
+        grid-template-columns: repeat(1,300px);
+        justify-content: center;
+        gap: 40px;
+    }
+    .servicetitle{
+        color: #0D4C93;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 500;
+        margin: 30px 0;
+    }
+}
