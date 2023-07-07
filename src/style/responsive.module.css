@@ -8,6 +8,7 @@
     align-items: center;
     top: 5%;
     width: 90%;
+    /* padding: 40px 20px; */
     left: 50%;
     transform: translate(-50%,-50%);
     z-index: 1000;
@@ -98,8 +99,17 @@ color: black;
     border-radius: 20px;
     align-items: center;
 }
+
 @media screen and (max-width:1248px) {
     .mobile{
         display: block;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 10000;
     }
 }

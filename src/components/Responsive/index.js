@@ -11,16 +11,17 @@ import AosAnimation from "../AosAnimation/index"
 //css
 import styles from "../../style/responsive.module.css"
 import CustomSelect from '../CustomSelect'
+import Translate from '../../utils/Translate'
 const Index = () => {
     const [bar,setBar] = useState(true)
     const navItem = [
-        {id:1,title:"МАГАЗИН ",href:"#market"},
-        {id:2,title:"О КОМПАНИИ ",href:"#company"},
-        {id:3,title:"ПРОДУКЦИЯ ",href:"#product"},
-        {id:4,title:"УСЛУГИ ",href:"#uslugy"},
-        {id:5,title:"АКЦИИ И НОВОСТИ ",href:"#news"},
-        {id:6,title:"ОБРАТНАЯ СВЯЗЬ ",href:"#svyaz"},
-      ]
+      {id:1,title:<Translate dictionary={{en:"SHOPPING",ru:"МАГАЗИН",uz:"MAGAZIN"}}/>,href:"#market"},
+      {id:2,title:<Translate dictionary={{en:"ABOUT",ru:"О КОМПАНИИ",uz:"KOMPANIYA"}}/>,href:"#company"},
+      {id:3,title:<Translate dictionary={{en:"PRODUCTS",ru:"ПРОДУКЦИЯ",uz:"MAHSULOTLAR"}}/>,href:"#product"},
+      {id:4,title:<Translate dictionary={{en:"SERVICE",ru:"УСЛУГИ",uz:"XIZMATLAR"}}/>,href:"#uslugy"},
+      {id:5,title:<Translate dictionary={{en:"DISCOUNT AND NEWS",ru:"АКЦИИ И НОВОСТИ",uz:"YANGILIKLAR"}}/>,href:"#news"},
+      {id:6,title:<Translate dictionary={{en:"FEEDBACK",ru:"ОБРАТНАЯ СВЯЗЬ ",uz:"FEEDBACK"}}/>,href:"#svyaz"},
+    ]
     console.log(bar);
   return (
     <div className={styles.mobile}>
@@ -44,7 +45,7 @@ const Index = () => {
             <span className={styles.top_facebook} style={{width:"150px"}}><CustomSelect/></span>
         </div>
     {navItem.map(item=>(
-        <div className={styles.item}><a href={item.href}>{item.title}</a></div>
+        <div className={styles.item}><a href={item.href} onClick={()=>setBar((prev)=>!prev)}>{item.title}</a></div>
       ))}
       </AosAnimation>
     </div> }

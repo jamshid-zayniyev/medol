@@ -1,0 +1,154 @@
+.footer{
+    background-image: url(../assets/Image/hospital.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: invert(7%);
+    padding: 30px 10px;
+}
+
+.footericons{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    /* margin-left: 20px; */
+    color:rgba(90, 90, 90, 1);
+}
+.footericons a{
+    color: rgba(90, 90, 90, 1);
+}
+.footericons img{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 3px;
+    padding: 4px;
+}
+.footer .btn{
+    background: linear-gradient(90deg, #0D4C93 0%, #00C9C9 100%);
+    border-radius: 35px;    
+    padding: 9px 25px;
+    color: white;
+    text-align: center;
+    border: none;
+    transition: 0.5s;
+    
+    }
+.footer .btn:hover{
+        background: rgba(0, 201, 201, 1);
+        transition: 0.5s;
+    }
+    .logoimg{
+        width: 150px;
+    }
+    .logoandtext{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        color: rgba(90, 90, 90, 1);
+    }
+    .footer h5{
+        font-size: 15px;
+        color: rgb(78, 78, 78);
+    }
+    .footer h5:hover{
+        color: rgba(0, 201, 201, 1);
+    }
+    .footer .links{
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+        gap: 20px;
+    }
+    .footer .links a{
+        text-decoration: none;
+        color: rgba(90, 90, 90, 1);
+    }
+    .footer .links a:hover{
+        color: rgba(0, 201, 201, 1);
+
+    }
+    a{
+        text-decoration: none;
+    }
+    .footerin{
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+    .reserve{
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin: auto;
+
+    }
+    .contactfooter{
+        display: flex;
+        gap: 15px;
+    }
+    .firstcontact{
+        width: 50%;
+    }
+    @media screen and (max-width:1024px) {
+        .footerin{
+            width: 90%;
+            margin: auto;
+            display: block;
+            justify-content: center;
+            gap: 5px;
+        }
+        .logoandtext{
+            display: block;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            color: rgba(90, 90, 90, 1);
+            text-align: center;
+        }
+        .logoandtext div{
+            margin: 15spx 0;
+        }
+        .links{
+            margin-top: 20px;
+        }
+        .reserve{
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            margin: auto;
+            padding-top: 10px;
+        }
+    }
+    @media screen and (max-width:768px) {
+        .contactfooter{
+            display: block;
+            gap: 15px;
+            text-align: center;
+            margin: auto;
+            width: 100%;
+        }
+        .footericons{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            color:rgba(90, 90, 90, 1);
+        }
+       .reserve{
+        display: block;
+        text-align: center;
+       }
+       .firstcontact{
+        width: 90%;
+    }
+    }

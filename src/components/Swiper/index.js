@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import news_1 from "../../assets/Image/news.png"
+import Modal from "../Modal"
+
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -11,16 +13,24 @@ import { AiOutlineRightCircle } from 'react-icons/ai'
 
 // import required modules
 import { Navigation, Pagination } from 'swiper/modules';
+import Translate from '../../utils/Translate';
 
 export default function App() {
+  const [modalShow, setModalShow] = React.useState(false);
+  const [data, setData] = React.useState();
+  const handleClick = (item) =>{
+      setData(item)
+      setModalShow(true)
+  }
   const dataNews = [
-    {id:1,img:news_1,title:"Mастер-класс в исполнении Галлямова Эдуарда Абдулхаевича",date:"26.07.2021",description:"С 19 по 21 апреля в АО «РСНПМЦУ» (Республиканский Специализированный Научно-Практический Медицинский Центр Урологии) при поддержке компаний Ethicon Endo Surgery (Johnson&Johnson) и ИП ООО «Medical Online Services» был проведен мастер-класс в исполнении..."},
-    {id:2,img:news_1,title:"Mастер-класс в исполнении Галлямова Эдуарда Абдулхаевича",date:"26.07.2021",description:"С 19 по 21 апреля в АО «РСНПМЦУ» (Республиканский Специализированный Научно-Практический Медицинский Центр Урологии) при поддержке компаний Ethicon Endo Surgery (Johnson&Johnson) и ИП ООО «Medical Online Services» был проведен мастер-класс в исполнении..."},
-    {id:3,img:news_1,title:"Mастер-класс в исполнении Галлямова Эдуарда Абдулхаевича",date:"26.07.2021",description:"С 19 по 21 апреля в АО «РСНПМЦУ» (Республиканский Специализированный Научно-Практический Медицинский Центр Урологии) при поддержке компаний Ethicon Endo Surgery (Johnson&Johnson) и ИП ООО «Medical Online Services» был проведен мастер-класс в исполнении..."},
-    {id:4,img:news_1,title:"Mастер-класс в исполнении Галлямова Эдуарда Абдулхаевича",date:"26.07.2021",description:"С 19 по 21 апреля в АО «РСНПМЦУ» (Республиканский Специализированный Научно-Практический Медицинский Центр Урологии) при поддержке компаний Ethicon Endo Surgery (Johnson&Johnson) и ИП ООО «Medical Online Services» был проведен мастер-класс в исполнении..."},
-    {id:5,img:news_1,title:"Mастер-класс в исполнении Галлямова Эдуарда Абдулхаевича",date:"26.07.2021",description:"С 19 по 21 апреля в АО «РСНПМЦУ» (Республиканский Специализированный Научно-Практический Медицинский Центр Урологии) при поддержке компаний Ethicon Endo Surgery (Johnson&Johnson) и ИП ООО «Medical Online Services» был проведен мастер-класс в исполнении..."},
-    {id:6,img:news_1,title:"Mастер-класс в исполнении Галлямова Эдуарда Абдулхаевича",date:"26.07.2021",description:"С 19 по 21 апреля в АО «РСНПМЦУ» (Республиканский Специализированный Научно-Практический Медицинский Центр Урологии) при поддержке компаний Ethicon Endo Surgery (Johnson&Johnson) и ИП ООО «Medical Online Services» был проведен мастер-класс в исполнении..."},
-    {id:7,img:news_1,title:"Mастер-класс в исполнении Галлямова Эдуарда Абдулхаевича",date:"26.07.2021",description:"С 19 по 21 апреля в АО «РСНПМЦУ» (Республиканский Специализированный Научно-Практический Медицинский Центр Урологии) при поддержке компаний Ethicon Endo Surgery (Johnson&Johnson) и ИП ООО «Medical Online Services» был проведен мастер-класс в исполнении..."},
+    {id:1,img:news_1,title:<Translate dictionary={{en:"Master class performed by Gallyamov Eduard Abdulkhaevich",ru:"Mастер-класс в исполнении Галлямова Эдуарда Абдулхаевича",uz:"Gallyamov Eduard Abdulkhaevich ijrosida mahorat darsi"}}/>,date:"26.07.2021",description:<Translate dictionary={{en:"From April 19 to April 21 at JSC 'RSNPMTSU' (Republican Specialized Scientific and Practical Medical Center of Urology) with the support of Ethicon Endo Surgery (Johnson&Johnson) and FE LLC Medical Online Services a master class was held in the performance of...",ru:"С 19 по 21 апреля в АО «РСНПМЦУ» (Республиканский Специализированный Научно-Практический Медицинский Центр Урологии) при поддержке компаний Ethicon Endo Surgery (Johnson&Johnson) и ИП ООО «Medical Online Services» был проведен мастер-класс в исполнении...",uz:"“19 apreldan 21 aprelgacha “RSNPMTSU” OAJda (Respublika ixtisoslashtirilgan urologiya ilmiy-amaliy tibbiyot markazi) “Ethicon Endo Surgery” (Johnson&Johnson) va “Medical Online Services” MCHJ XK ko‘magida...” ijrosidagi mahorat darsi o‘tkazildi."}}/>},
+    {id:2,img:news_1,title:<Translate dictionary={{en:"Master class performed by Gallyamov Eduard Abdulkhaevich",ru:"Mастер-класс в исполнении Галлямова Эдуарда Абдулхаевича",uz:"Gallyamov Eduard Abdulkhaevich ijrosida mahorat darsi"}}/>,date:"26.07.2021",description:<Translate dictionary={{en:"From April 19 to April 21 at JSC 'RSNPMTSU' (Republican Specialized Scientific and Practical Medical Center of Urology) with the support of Ethicon Endo Surgery (Johnson&Johnson) and FE LLC Medical Online Services a master class was held in the performance of...",ru:"С 19 по 21 апреля в АО «РСНПМЦУ» (Республиканский Специализированный Научно-Практический Медицинский Центр Урологии) при поддержке компаний Ethicon Endo Surgery (Johnson&Johnson) и ИП ООО «Medical Online Services» был проведен мастер-класс в исполнении...",uz:"“19 apreldan 21 aprelgacha “RSNPMTSU” OAJda (Respublika ixtisoslashtirilgan urologiya ilmiy-amaliy tibbiyot markazi) “Ethicon Endo Surgery” (Johnson&Johnson) va “Medical Online Services” MCHJ XK ko‘magida...” ijrosidagi mahorat darsi o‘tkazildi."}}/>},
+    {id:3,img:news_1,title:<Translate dictionary={{en:"Master class performed by Gallyamov Eduard Abdulkhaevich",ru:"Mастер-класс в исполнении Галлямова Эдуарда Абдулхаевича",uz:"Gallyamov Eduard Abdulkhaevich ijrosida mahorat darsi"}}/>,date:"26.07.2021",description:<Translate dictionary={{en:"From April 19 to April 21 at JSC 'RSNPMTSU' (Republican Specialized Scientific and Practical Medical Center of Urology) with the support of Ethicon Endo Surgery (Johnson&Johnson) and FE LLC Medical Online Services a master class was held in the performance of...",ru:"С 19 по 21 апреля в АО «РСНПМЦУ» (Республиканский Специализированный Научно-Практический Медицинский Центр Урологии) при поддержке компаний Ethicon Endo Surgery (Johnson&Johnson) и ИП ООО «Medical Online Services» был проведен мастер-класс в исполнении...",uz:"“19 apreldan 21 aprelgacha “RSNPMTSU” OAJda (Respublika ixtisoslashtirilgan urologiya ilmiy-amaliy tibbiyot markazi) “Ethicon Endo Surgery” (Johnson&Johnson) va “Medical Online Services” MCHJ XK ko‘magida...” ijrosidagi mahorat darsi o‘tkazildi."}}/>},
+    {id:4,img:news_1,title:<Translate dictionary={{en:"Master class performed by Gallyamov Eduard Abdulkhaevich",ru:"Mастер-класс в исполнении Галлямова Эдуарда Абдулхаевича",uz:"Gallyamov Eduard Abdulkhaevich ijrosida mahorat darsi"}}/>,date:"26.07.2021",description:<Translate dictionary={{en:"From April 19 to April 21 at JSC 'RSNPMTSU' (Republican Specialized Scientific and Practical Medical Center of Urology) with the support of Ethicon Endo Surgery (Johnson&Johnson) and FE LLC Medical Online Services a master class was held in the performance of...",ru:"С 19 по 21 апреля в АО «РСНПМЦУ» (Республиканский Специализированный Научно-Практический Медицинский Центр Урологии) при поддержке компаний Ethicon Endo Surgery (Johnson&Johnson) и ИП ООО «Medical Online Services» был проведен мастер-класс в исполнении...",uz:"“19 apreldan 21 aprelgacha “RSNPMTSU” OAJda (Respublika ixtisoslashtirilgan urologiya ilmiy-amaliy tibbiyot markazi) “Ethicon Endo Surgery” (Johnson&Johnson) va “Medical Online Services” MCHJ XK ko‘magida...” ijrosidagi mahorat darsi o‘tkazildi."}}/>},
+    {id:5,img:news_1,title:<Translate dictionary={{en:"Master class performed by Gallyamov Eduard Abdulkhaevich",ru:"Mастер-класс в исполнении Галлямова Эдуарда Абдулхаевича",uz:"Gallyamov Eduard Abdulkhaevich ijrosida mahorat darsi"}}/>,date:"26.07.2021",description:<Translate dictionary={{en:"From April 19 to April 21 at JSC 'RSNPMTSU' (Republican Specialized Scientific and Practical Medical Center of Urology) with the support of Ethicon Endo Surgery (Johnson&Johnson) and FE LLC Medical Online Services a master class was held in the performance of...",ru:"С 19 по 21 апреля в АО «РСНПМЦУ» (Республиканский Специализированный Научно-Практический Медицинский Центр Урологии) при поддержке компаний Ethicon Endo Surgery (Johnson&Johnson) и ИП ООО «Medical Online Services» был проведен мастер-класс в исполнении...",uz:"“19 apreldan 21 aprelgacha “RSNPMTSU” OAJda (Respublika ixtisoslashtirilgan urologiya ilmiy-amaliy tibbiyot markazi) “Ethicon Endo Surgery” (Johnson&Johnson) va “Medical Online Services” MCHJ XK ko‘magida...” ijrosidagi mahorat darsi o‘tkazildi."}}/>},
+    {id:6,img:news_1,title:<Translate dictionary={{en:"Master class performed by Gallyamov Eduard Abdulkhaevich",ru:"Mастер-класс в исполнении Галлямова Эдуарда Абдулхаевича",uz:"Gallyamov Eduard Abdulkhaevich ijrosida mahorat darsi"}}/>,date:"26.07.2021",description:<Translate dictionary={{en:"From April 19 to April 21 at JSC 'RSNPMTSU' (Republican Specialized Scientific and Practical Medical Center of Urology) with the support of Ethicon Endo Surgery (Johnson&Johnson) and FE LLC Medical Online Services a master class was held in the performance of...",ru:"С 19 по 21 апреля в АО «РСНПМЦУ» (Республиканский Специализированный Научно-Практический Медицинский Центр Урологии) при поддержке компаний Ethicon Endo Surgery (Johnson&Johnson) и ИП ООО «Medical Online Services» был проведен мастер-класс в исполнении...",uz:"“19 apreldan 21 aprelgacha “RSNPMTSU” OAJda (Respublika ixtisoslashtirilgan urologiya ilmiy-amaliy tibbiyot markazi) “Ethicon Endo Surgery” (Johnson&Johnson) va “Medical Online Services” MCHJ XK ko‘magida...” ijrosidagi mahorat darsi o‘tkazildi."}}/>},
+    {id:7,img:news_1,title:<Translate dictionary={{en:"Master class performed by Gallyamov Eduard Abdulkhaevich",ru:"Mастер-класс в исполнении Галлямова Эдуарда Абдулхаевича",uz:"Gallyamov Eduard Abdulkhaevich ijrosida mahorat darsi"}}/>,date:"26.07.2021",description:<Translate dictionary={{en:"From April 19 to April 21 at JSC 'RSNPMTSU' (Republican Specialized Scientific and Practical Medical Center of Urology) with the support of Ethicon Endo Surgery (Johnson&Johnson) and FE LLC Medical Online Services a master class was held in the performance of...",ru:"С 19 по 21 апреля в АО «РСНПМЦУ» (Республиканский Специализированный Научно-Практический Медицинский Центр Урологии) при поддержке компаний Ethicon Endo Surgery (Johnson&Johnson) и ИП ООО «Medical Online Services» был проведен мастер-класс в исполнении...",uz:"“19 apreldan 21 aprelgacha “RSNPMTSU” OAJda (Respublika ixtisoslashtirilgan urologiya ilmiy-amaliy tibbiyot markazi) “Ethicon Endo Surgery” (Johnson&Johnson) va “Medical Online Services” MCHJ XK ko‘magida...” ijrosidagi mahorat darsi o‘tkazildi."}}/>},
+    {id:8,img:news_1,title:<Translate dictionary={{en:"Master class performed by Gallyamov Eduard Abdulkhaevich",ru:"Mастер-класс в исполнении Галлямова Эдуарда Абдулхаевича",uz:"Gallyamov Eduard Abdulkhaevich ijrosida mahorat darsi"}}/>,date:"26.07.2021",description:<Translate dictionary={{en:"From April 19 to April 21 at JSC 'RSNPMTSU' (Republican Specialized Scientific and Practical Medical Center of Urology) with the support of Ethicon Endo Surgery (Johnson&Johnson) and FE LLC Medical Online Services a master class was held in the performance of...",ru:"С 19 по 21 апреля в АО «РСНПМЦУ» (Республиканский Специализированный Научно-Практический Медицинский Центр Урологии) при поддержке компаний Ethicon Endo Surgery (Johnson&Johnson) и ИП ООО «Medical Online Services» был проведен мастер-класс в исполнении...",uz:"“19 apreldan 21 aprelgacha “RSNPMTSU” OAJda (Respublika ixtisoslashtirilgan urologiya ilmiy-amaliy tibbiyot markazi) “Ethicon Endo Surgery” (Johnson&Johnson) va “Msedical Online Services” MCHJ XK ko‘magida...” ijrosidagi mahorat darsi o‘tkazildi."}}/>},
   ]
   return (
     <div>
@@ -37,6 +47,11 @@ export default function App() {
         className="mySwiper"
         
       >
+        <Modal
+        show={modalShow}
+        data={data}
+        onHide={() => setModalShow(false)}
+      />
         {dataNews.map(item=>(
         <SwiperSlide>
           <div className='newsslider'>
@@ -50,7 +65,7 @@ export default function App() {
             </div>
             <div className='date'>{item.date}</div>
             <div><p className='des'>{item.description}</p></div>
-            <button>Подробнее</button>
+            <button onClick={()=>handleClick(item)}><Translate dictionary={{en:"Read more",ru:"Подробнее",uz:"Batafsil"}}/></button>
                 </div>
             </div>
           </div>
@@ -85,7 +100,7 @@ export default function App() {
           </div>
           <div className='date'>{item.date}</div>
           <div><p className='des'>{item.description}</p></div>
-          <button>Подробнее</button>
+          <button onClick={()=>handleClick(item)}><Translate dictionary={{en:"Read more",ru:"Подробнее",uz:"Batafsil"}}/></button>
               </div>
           </div>
         </div>
@@ -96,8 +111,8 @@ export default function App() {
       </Swiper>
     </div>
     <div className='newsfot'>
-      <div>Посмотреть все новости <AiOutlineRightCircle/></div>
-      <div>Подписаться на новости <AiOutlineRightCircle/></div>
+      <div><Translate dictionary={{en:"View all news ",ru:"Посмотреть все новости",uz:"Barcha yangiliklarni ko'rish"}}/><AiOutlineRightCircle/></div>
+      <div><Translate dictionary={{en:"Subscribe to news",ru:"Подписаться на новости ",uz:"Yangiliklarga obuna bo'ling"}}/><AiOutlineRightCircle/></div>
       <div></div>
     </div>
     </div>

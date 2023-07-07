@@ -20,7 +20,22 @@
     margin: auto;
   }
 
-  
+  .loader{
+    z-index: 100000;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+  }
+  .loader-in{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
  .new_slider .swiper-slide {
     text-align: center;
     font-size: 18px;
